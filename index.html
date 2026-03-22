@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Для моей любимой ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffb6c1 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .heart {
+            font-size: 80px;
+            color: #ff3366;
+            animation: heartbeat 1s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        h1 {
+            color: #ff3366;
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        
+        .love-btn {
+            background: #ff3366;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: transform 0.3s;
+        }
+        
+        .love-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .response {
+            font-size: 1.3rem;
+            color: #ff3366;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .timer {
+            font-size: 1.2rem;
+            color: #ff3366;
+            background: #fff0f3;
+            padding: 12px;
+            border-radius: 15px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .message {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Для моей любимой 💕</h1>
+        <div class="message">
+            <p><strong>От: Расулов Али</strong> 💕</p>
+            <p>Мы познакомились <strong>2 августа 2025 года</strong> 🥰</p>
+            <p>Ты — самое лучшее в моей жизни!</p>
+            <p>Я тебя очень сильно люблю! 💖</p>
+        </div>
+        <div class="timer" id="timer"></div>
+        <button class="love-btn" onclick="showLove()">Нажми, если любишь меня ❤️</button>
+        <div class="response" id="response">
+            🎉 Я ТЕБЯ ТОЖЕ ЛЮБЛЮ Багрым! 🎉<br>
+            💖 Ты лучшая! 💖
+        </div>
+    </div>
+    
+    <script>
+        function updateTimer() {
+            const startDate = new Date(2025, 7, 2);
+            const today = new Date();
+            const diffDays = Math.ceil(Math.abs(today - startDate) / (1000 * 60 * 60 * 24));
+            document.getElementById('timer').innerHTML = `❤️ Мы вместе ${diffDays} дней ❤️`;
+        }
+        updateTimer();
+        
+        function showLove() {
+            document.getElementById('response').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
